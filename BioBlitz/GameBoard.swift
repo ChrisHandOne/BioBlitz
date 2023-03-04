@@ -12,7 +12,7 @@ class GameBoard: ObservableObject {
     let columnCount = 22
     
     @Published var grid = [[Bacteria]]()
-    
+   
     init() {
         reset()
     }
@@ -40,22 +40,53 @@ class GameBoard: ObservableObject {
                         bacteria.direction = counterpart.direction.opposite
                     }
                 }
-                               
+                
                 newRow.append(bacteria)
             }
             
             grid.append(newRow)
         }
         
-        func getBacteria(atRow row: Int, col: Int) -> Bacteria? {
-            guard row >= 0 else { return nil }
-            guard row < grid.count else { return nil }
-            guard col >= 0 else { return nil }
-            guard col < grid[0].count else { return nil }
-            return grid[row][col]
-        }
-        
         grid[0][0].color = .green
         grid[rowCount - 1][columnCount - 1].color = .red
     }
+        
+    func getBacteria(atRow row: Int, col: Int) -> Bacteria? {
+        guard row >= 0 else { return nil }
+        guard row < grid.count else { return nil }
+        guard col >= 0 else { return nil }
+        guard col < grid[0].count else { return nil }
+        return grid[row][col]
+    }
+    
+    func infect(from: Bacteria) {
+        objectWillChange.send()
+        
+        var bacteriaToInfect = [Bacteria?]()
+        
+        switch from.direction {
+        case .north:
+            bacteriaToInfect.append(getBacteria(atRow: from.row-1, col: from.col))
+        case .south:
+            bacteriaToInfect.append(getBacteria(atRow: from.row+1, col: from.col))
+        case .east:
+            bacteriaToInfect.append(getBacteria(atRow: from.row, col: from.col+1))
+        case .west:
+            bacteriaToInfect.append(getBacteria(atRow: from.row, col: from.col-1))
+        }
+        
+        for case let bacteria? in bacteriaToInfect {
+            if bacteria.color != from.color {
+                bacteria.color = from.color
+                infect(from: bacteria)
+            }
+        }
+    }
+    
+    func rotate(bacteria: Bacteria) {
+        objectWillChange.send()
+        bacteria.direction = bacteria.direction.next
+        infect(from: bacteria)
+    }
 }
+

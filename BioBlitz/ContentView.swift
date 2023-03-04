@@ -26,15 +26,17 @@ struct ContentView: View {
                         ForEach(0..<22, id: \.self) { col in
                             let bacteria = board.grid[row][col]
                             
-                            BacteriaView(bacteria: bacteria) {}
+                            BacteriaView(bacteria: bacteria) {
+                                board.rotate(bacteria: bacteria)
+                            }
                         }
                     }
                 }
             }
+            .padding()
+            .fixedSize()
+            .preferredColorScheme(.dark)
         }
-        .padding()
-        .fixedSize()
-        .preferredColorScheme(.dark)
     }
 }
 
