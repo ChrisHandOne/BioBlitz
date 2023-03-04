@@ -13,6 +13,7 @@
 		E6D6E3DD29B3E9B100820908 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D6E3DC29B3E9B100820908 /* Preview Assets.xcassets */; };
 		E6D6E3E529B3FB1B00820908 /* Bacteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6E3E429B3FB1B00820908 /* Bacteria.swift */; };
 		E6D6E3E729B3FE6100820908 /* BacteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6E3E629B3FE6100820908 /* BacteriaView.swift */; };
+		E6D6E3E929B4045100820908 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6E3E829B4045100820908 /* GameBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E6D6E3DE29B3E9B100820908 /* BioBlitz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BioBlitz.entitlements; sourceTree = "<group>"; };
 		E6D6E3E429B3FB1B00820908 /* Bacteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bacteria.swift; sourceTree = "<group>"; };
 		E6D6E3E629B3FE6100820908 /* BacteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacteriaView.swift; sourceTree = "<group>"; };
+		E6D6E3E829B4045100820908 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				E6D6E3D529B3E9B000820908 /* BioBlitzApp.swift */,
 				E6D6E3D729B3E9B000820908 /* ContentView.swift */,
+				E6D6E3E829B4045100820908 /* GameBoard.swift */,
 				E6D6E3D929B3E9B100820908 /* Assets.xcassets */,
 				E6D6E3DE29B3E9B100820908 /* BioBlitz.entitlements */,
 				E6D6E3DB29B3E9B100820908 /* Preview Content */,
@@ -147,6 +150,7 @@
 			files = (
 				E6D6E3D829B3E9B000820908 /* ContentView.swift in Sources */,
 				E6D6E3D629B3E9B000820908 /* BioBlitzApp.swift in Sources */,
+				E6D6E3E929B4045100820908 /* GameBoard.swift in Sources */,
 				E6D6E3E529B3FB1B00820908 /* Bacteria.swift in Sources */,
 				E6D6E3E729B3FE6100820908 /* BacteriaView.swift in Sources */,
 			);
